@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import Header from './components/Header';
+import products from './products.json';
+import Product from './components/Product';
+import { Container } from 'react-bootstrap';
+import { useState } from 'react';
+import Basket from './components/Basket';
+
 
 function App() {
+
+  const [basket, setBasket] = useState([]);  
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    < >
+ 
+     <Header/>
+     <div className='productContainer'>
+      <div className='productBoxs'>
+        
+        {products.map(product => (  // olusturulan product. Component olan Product  e asagidaki gibi gönderiyoruz
+            <Product basket={basket}  setBasket={setBasket}   product={product}/>
+        ))}
+
+      </div>
+      <Basket/>
+
+     </div>
+    </>
   );
 }
 
