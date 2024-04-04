@@ -1,15 +1,23 @@
-import './index.css';
-import Header from './components/Header';
-import products from './products.json';
-import Product from './components/Product';
-import { Container } from 'react-bootstrap';
-import { useState } from 'react';
-import Basket from './components/Basket';
 
+
+ import Basket from './components/Basket';
+ import Header from './components/Header';
+ import Product from './components/Product';
+ import './index.css';
+ import products from './products.json';
+ import {useState,useEffect} from 'react';
 
 function App() {
 
   const [basket, setBasket] = useState([]);  
+  const [cost, setCost] = useState("");
+
+  useEffect( () => {
+    const totalPrice = basket.reduce((pre,basket) => pre +(basket.amount*basket.price),0);
+    setCost(totalPrice);
+    //console.log(basket)
+
+  },[basket])
 
 
 
@@ -21,11 +29,11 @@ function App() {
       <div className='productBoxs'>
         
         {products.map(product => (  // olusturulan product. Component olan Product  e asagidaki gibi gönderiyoruz
-            <Product basket={basket}  setBasket={setBasket}   product={product}/>
+            <Product key={product.id} basket={basket}  setBasket={setBasket}   product={product} />
         ))}
 
       </div>
-      <Basket/>
+      <Basket cost={cost} basket={basket}/>
 
      </div>
     </>
