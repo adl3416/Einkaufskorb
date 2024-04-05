@@ -67,7 +67,6 @@ export default function Product({product,basket,setBasket}) {
     )
   }
 
-
 /* import React from 'react'
 
 

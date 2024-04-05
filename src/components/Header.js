@@ -1,9 +1,13 @@
+
 import React from 'react'
 
-const Header = () => {
-  return (
-    <div>Header</div>
-  )
-}
+export default function Header() {
+	return (
+		<div>
+		<div className='header'>
+		Shoe Store
+		</div>
 
-export default Header
+		</div>
+		)
+}

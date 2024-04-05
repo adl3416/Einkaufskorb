@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Basket({basket,cost }) {
+export default function Basket({basket,cost}) {
   return (
     <div>
     <div className='mainBasket'>
