@@ -9,7 +9,7 @@ export default function Product({product,basket,setBasket}) {
     if(addFind)
     {
       addFind.amount += 1;
-      setBasket([...basket.filter(item => item.id !== product.id),{
+      setBasket([...basket.filter(item => item.id !== product.id),{ //
         id : product.id,
         name: product.name,
         img : product.img,
