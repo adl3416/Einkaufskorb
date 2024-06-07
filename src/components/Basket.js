@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Basket({basket,cost}) {
+export default function Basket({basket,cost }) {
   return (
     <div>
     <div className='mainBasket'>
@@ -10,7 +10,10 @@ export default function Basket({basket,cost}) {
     {
      basket.map(item => (
        <div className='basketList'>
+
        <img width="100" src={item.img} />
+
+
        <p>{item.name} x {item.amount}</p>
        <p> $ {item.price * item.amount}</p>
 
@@ -25,3 +28,5 @@ export default function Basket({basket,cost}) {
      </div>
      )
    }
+
+
