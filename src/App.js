@@ -12,7 +12,7 @@ function App() {
     const totalPrice = basket.reduce((pre,basket) => pre +(basket.amount*basket.price),0);
     setCost(totalPrice);
 
-  },[basket])
+  },[basket]) //sepete ekle
 
   return (
     <>
@@ -28,7 +28,7 @@ function App() {
     }
 
     </div>
-    <Basket cost={cost} basket={basket}/>
+    <Basket cost={cost}  basket={basket}/>
     </div>
 
     </>

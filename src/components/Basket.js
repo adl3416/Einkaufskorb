@@ -6,7 +6,7 @@ export default function Basket({basket,cost }) {
     <div className='mainBasket'>
     <div className='showBasket'>
     <h2>Basket</h2>
-    {basket.length === 0 && <p>not found result</p> || null}
+    {basket.length === 0 && <p>Not found result</p> || null}
     {
      basket.map(item => (
        <div className='basketList'>
