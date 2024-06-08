@@ -5,7 +5,7 @@ export default function Header() {
 	return (
 		<div>
 		<div className='header'>
-		ShoeStore
+		ShoeStoree
 		</div>
 
 		</div>

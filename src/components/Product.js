@@ -8,7 +8,7 @@ export default function Product({product,basket,setBasket}) {
     const addFind = basket.find(item => item.id === product.id);
     if(addFind)
     {
-      addFind.amount += 1;
+      addFind.amount +=1;
       setBasket([...basket.filter(item => item.id !== product.id),{ 
         id : product.id,
         name: product.name,
